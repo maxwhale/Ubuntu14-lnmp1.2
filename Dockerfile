@@ -18,6 +18,8 @@ RUN chmod +x /*.sh
 ENV AUTHORIZED_KEYS **None**
 ENV ROOT_PASS **RANDOM**
 
+VOLUME ["/home"]
+
 EXPOSE 22 80 3306
 
 CMD ["/run.sh"]
