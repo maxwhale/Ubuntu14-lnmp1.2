@@ -9,7 +9,7 @@ RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSep
 RUN apt-get -y install wget tar screen
 
 # Download and install LNMP.
-RUN echo 'wget -c http://static.suod.ga/lnmp/lnmp1.2-full.tar.gz && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz'
+RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz'
 
 #Change 163 mirrors
 ADD sources.list /etc/apt/sources.list
