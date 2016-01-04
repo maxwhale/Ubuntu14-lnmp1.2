@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Jiu Ai <admin@9ikj.cn> 
 
 # Install packages
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
 # Install wget tar screen packages
@@ -13,6 +13,9 @@ RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-che
 
 #Change 163 mirrors
 ADD sources.list /etc/apt/sources.list
+
+#Update
+RUN apt-get update
 
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
