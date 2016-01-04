@@ -25,7 +25,6 @@ ENV AUTHORIZED_KEYS **None**
 ENV ROOT_PASS **RANDOM**
 
 VOLUME ["/home"]
-VOLUME ["/usr/local/mysql/var"]
 
 EXPOSE 22 80 3306
 
