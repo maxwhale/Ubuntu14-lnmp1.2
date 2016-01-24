@@ -22,7 +22,7 @@ ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
 ENV AUTHORIZED_KEYS **None**
-ENV ROOT_PASS **RANDOM**
+ENV ROOT_PASS LNMP123
 
 VOLUME ["/home"]
 
