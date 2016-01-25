@@ -14,7 +14,7 @@ RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSep
 # Install wget tar screen htop packages
 RUN apt-get -y install wget tar screen htop
 
-# Download and install LNMP.
+# Download and install lnmp1.2.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
 
 ADD set_root_pw.sh /set_root_pw.sh
