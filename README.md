@@ -2,6 +2,8 @@ Ubuntu版本：14.04 (64bit)
 
 LNMP版本: 1.2 （lnmp.org)
 
+阿里云源
+
 默认SSH登陆密码：LNMP123
 
 环境变量AUTHORIZED_KEYS，在创建时可直接使用你电脑的id_rsa.pub(公钥），可免密码登陆
