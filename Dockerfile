@@ -5,8 +5,8 @@ MAINTAINER Max
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
-# Install wget tar screen packages
-RUN apt-get -y install wget tar screen
+# Install wget tar screen htop packages
+RUN apt-get -y install wget tar screen htop
 
 # Download and install LNMP.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
